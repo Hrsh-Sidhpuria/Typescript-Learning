@@ -5,6 +5,8 @@
 //any , unknown, void, null, undefined, never 
 
 
+/*
+
 // type inference 
 var a = 10;
 
@@ -152,10 +154,97 @@ let d_2 = new Device1("lenovo", 3000,"charger");
 // using this 
 
 class c1 {
-    name1 :  = "harsh";
+    name1 = "harsh";
 
     changename (){
         this.name1 = "alpha";
     }
 }
+
+
+// super in constructor 
+
+class cl1 {
+    constructor(public name : string){
+
+    }
+}
+class cl2 extends cl1{
+    constructor(name : string)
+    {
+        super(name);
+        // this super will call his parent class constructor and pass the name as a parameter to the parent class constructor.
+    }
+}
+
+//access modifier 
+//public, private, protected
+// by default all the members are public if no modifier is mentioned.
+
+//making the property readonly 
+class company_user{
+    constructor( public readonly name : string) // here the name is readonly so we cannot change the name ince we inatialized it .    {
+          {  console.log(name);
+    }
+}
+
+
+
+// getter setter
+
+class USER1{
+    constructor(public name : string , public email : string){}
+
+    //getter
+    getName (): string
+    {
+        return this.name;
+    }
+    getEmail():string{
+        return this.email;
+    }
+
+    //setter
+    setName(value: string  ) : void{
+        this.name = value;
+    }
+    setEmail(value: string  ) : void{
+        this.email = value;
+    }
+
+    // this above getter and setter will act like method not act like properties.
+}
+
+let u1= new USER1("harsh", "h@h.com");
+console.log(u1.getName());
+
+u1.setEmail("harsh@gmail.com");
+
+*/
+
+// getter and setter in which it will work like a properties 
+class USER2{
+    constructor(public _name : string , public email : string){}
+
+    //getter
+    get name () : string
+    {
+        return this._name;
+    }
+
+    //setter
+   set name (value : string)
+   {
+    this._name = value
+   }
+   
+
+    // this above getter and setter will act like method not act like properties.
+}
+
+let u2= new USER2("harsh", "h@h.com");
+console.log(u2.name);
+
+u2.name = "harsh112";
+
 
