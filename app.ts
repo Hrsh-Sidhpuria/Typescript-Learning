@@ -247,4 +247,56 @@ console.log(u2.name);
 
 u2.name = "harsh112";
 
+// callback Functions
+
+// function abcd ( a:string,  cal: (value:string)=>void)
+// {
+
+// }
+
+// abcd("harsh",(value:string)=>{console.log(value);
+// })
+
+function abcd ( a:string,  cal: (value:string)=>void)
+{
+
+    cal("hey");
+}
+
+abcd("harsh",(value:string)=>{console.log(value);
+})
+
+// optional and default parameter in functions
+
+function oppara (name : string , email:string, age?:number){
+//in this function the age? is a optional parameter. here ? shows that this is optional parameter.
+}
+
+function defaultpara(name:string = "user", age : number= 18 )
+{
+    // in this the name and age is the default parameter. in name if the name is being passed as parameter then it will take that name otherwise it will take the default name which is user.
+}
+
+//rest parameter 
+
+function sum (...num : number[]) : number
+{
+// we can pass multple argument to the parameter and collect it at once using ...args parameter. this is used when we want to pass parameter at runtime or we want to pass any number of parameter.
+let n :number = num.length;
+let sum : number = 0;
+while(n>0)
+{
+    sum - sum+ num[n];
+}
+return sum;
+
+}
+
+let ans : number = sum(1,2,3,4,5,2,3,4,2,3);
+
+// spread operator use 
+let arr = [1,2,3];
+let arr1 = [...arr,4,5,6];
+
+
 
