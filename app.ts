@@ -298,5 +298,85 @@ let ans : number = sum(1,2,3,4,5,2,3,4,2,3);
 let arr = [1,2,3];
 let arr1 = [...arr,4,5,6];
 
+//Generics
 
+function ab<T>(val : T)
+{
+
+}
+
+ab<string>("harsh");
+ab<boolean>(true);
+
+//Generic Interface
+
+interface user<T>{
+    name : string,
+    email:string,
+    key:T
+}
+
+function abcd(obj: user<string>){
+}
+ 
+abcd({name:"harsh",email:"h@h.com",key:"user112"})
+
+function dcba(obj:user<number>){
+
+}
+
+dcba({name:"harsh",email:"e@e.com",key:32})
+
+class genericDemo<T>{
+    constructor(val : T){}
+}
+
+let c1 = new genericDemo<string>("harsh");
+let c2 = new genericDemo<number >(22);
+
+//Type Assertion
+
+let a: any = "test";
+
+(a as string).indexOf("e"); 
+
+
+// type casting
+
+let num = Number(12);
+let num1 = Number("127");
+let str = String("testing type casting");
+
+console.log(num, str);
+
+//NON null assertion operator 
+
+let d : null| undefined|string = "test1";
+d!.charAt(3);
+
+//here d! tell that the value of d is not null and undefined. there should exist some value of d for super.             
+
+// type guard and typescript utility types
+
+// type narrowing 
+
+function demo( val : number|string)
+{
+
+    if(typeof val === "string"){
+
+        console.log(val , " is a string so we can perform string operations here.");
+        val.toUpperCase();
+    }
+    else if(typeof val === "number"){
+
+        console.log(val , " is a number so we can perform number operations here.");
+        val.toString();
+        
+    }
+    else{}
+}
+
+demo(12);
+demo("test2")
 
